@@ -4,3 +4,4 @@ keyboard>=0.13.5
 rgbprint>=4.0.2
 python-whois>=0.9.4
 portscan >=1.1
+phonenumbers>=8.13.45
