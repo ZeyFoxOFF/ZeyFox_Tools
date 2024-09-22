@@ -1,0 +1,6 @@
+requests>=2.31.0
+whois>=0.9.27
+keyboard>=0.13.5
+rgbprint>=4.0.2
+python-whois>=0.9.4
+portscan >=1.1
