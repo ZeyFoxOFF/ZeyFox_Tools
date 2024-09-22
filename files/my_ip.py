@@ -1,11 +1,9 @@
 import requests
-import keyboard
 import subprocess
 import socket
 
 while True:
-    if keyboard.is_pressed("enter"):
-        break
+
 
     
     def get_public_ipv4():

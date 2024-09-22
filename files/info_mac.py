@@ -1,5 +1,4 @@
 import requests
-import keyboard
 import subprocess
 import time
 from rgbprint import gradient_print, Color
@@ -20,7 +19,7 @@ while True:
         start_color=Color.yellow, 
         end_color=Color.magenta
     )
-    adresse_mac = input("Entrez une adresse mac (ex. 00:00:00:FF:FF:FF) ou quitter avec Entrer : ").strip()
+    adresse_mac = input("Enter a mac address (ex. 00:00:00:FF:FF:FF) or exit with Enter: ").strip()
 
     if not adresse_mac:
         reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
@@ -48,16 +47,14 @@ while True:
         time.sleep(1)
         continue
 
-    print(f"MAC Address: {adresse_mac}")
+    print(f"MAC Address: \033[95m{adresse_mac}\033[0m")
     if country:
-        print(f"Country: {country}")
+        print(f"Country: \033[95m{country}\033[0m")
     if adresse:
-        print(f"Address: {adresse}")
+        print(f"Address: \033[95m{adresse}\033[0m")
     if company:
-        print(f"Company: {company}")
+        print(f"Company: \033[95m{company}\033[0m")
     if aleatoire:
         print(f"\033[38;5;214mGenerated MAC Address\033[0m")
     input("Press a key to continue...")
 
-    if keyboard.is_pressed("enter"):
-        break

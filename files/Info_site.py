@@ -1,7 +1,6 @@
 import requests
 import socket
 import whois
-import keyboard
 import subprocess
 import time
 from rgbprint import gradient_print, Color
@@ -22,7 +21,7 @@ while True:
         start_color=Color.yellow, 
         end_color=Color.magenta
     )
-    url = input("Enter the website link (e.g. https://example.com) or exit with Enter: ").strip()
+    url = input("Enter the website link (ex. https://example.com) or exit with Enter: ").strip()
 
     if not url:
         reponse = input("No link was entered. Do you want to leave the program? (Y/N): ")
@@ -66,7 +65,7 @@ while True:
     domaine = url.split("//")[-1].split("/")[0]
     try:
         adresse_ip = socket.gethostbyname(domaine)
-        print(f"IP: {adresse_ip}")
+        print(f"IP: \033[95m{adresse_ip}\033[0m")
     except socket.gaierror:
         print(f"Unable to resolve {domaine} IP")
 
@@ -75,7 +74,7 @@ while True:
         info = whois.whois(site_web_http)
         if info.status:
             dns = info.name_servers[0] if info.name_servers else "DNS not available"
-            print(f"DNS: {dns}")
+            print(f"DNS: \033[95m{dns}\033[0m")
         else:
             print(f"The website or domain '{site_web_http}' does not exist.")
     except requests.exceptions.ConnectionError:
@@ -91,7 +90,7 @@ while True:
         info = whois.whois(site_web_http)
         if info.status:
             host = info.registrar if info.registrar else "Host not available"
-            print(f"Host: {host}")
+            print(f"Host: \033[95m{host}\033[0m")
     except Exception as e:
         print(f"Unable to resolve host information for {site_web_http}")
 
@@ -115,31 +114,30 @@ while True:
     reverse_dns = geo_info.get("reverse", "N/A")
 
     if country != "N/A":
-        print(f"Country: {country}")
+        print(f"Country: \033[95m{country}\033[0m")
     if country_code != "N/A":
-        print(f"Country Code: {country_code}")
+        print(f"Country Code: \033[95m{country_code}\033[0m")
     if region != "N/A":
-        print(f"Region: {region}")
+        print(f"Region: \033[95m{region}\033[0m")
     if city != "N/A":
-        print(f"City: {city}")
+        print(f"City: \033[95m{city}\033[0m")
     if postal != "N/A":
-        print(f"Postal Code: {postal}")
+        print(f"Postal Code: \033[95m{postal}\033[0m")
     if loc != "N/A":
-        print(f"Location: {loc}")
-        print(f"GPS Coordinates: \033[95m{google_maps_link}\033[0m")
+        print(f"Location: \033[95m{loc}\033[0m")
+        print(f"GPS Coordinates: \033[95m\033[95m{google_maps_link}\033[0m")
     if timezone != "N/A":
-        print(f"Timezone: {timezone}")
+        print(f"Timezone: \033[95m{timezone}\033[0m")
     if isp != "N/A":
-        print(f"Internet Service Provider: {isp}")
+        print(f"Internet Service Provider: \033[95m{isp}\033[0m")
     if organization != "N/A":
-        print(f"Organization: {organization}")
+        print(f"Organization: \033[95m{organization}\033[0m")
     if as_number != "N/A":
-        print(f"AS Number: {as_number}")
+        print(f"AS Number: \033[95m{as_number}\033[0m")
     if as_name != "N/A":
-        print(f"AS Name: {as_name}")
+        print(f"AS Name: \033[95m{as_name}\033[0m")
     if reverse_dns != "N/A" and reverse_dns != "":
-        print(f"Hostname: {reverse_dns}")
+        print(f"Hostname: \033[95m{reverse_dns}\033[0m")
     input("Press a key to continue...")
 
-    if keyboard.is_pressed("enter"):
-        break
+

@@ -1,31 +1,38 @@
 import subprocess
+import time
 from rgbprint import gradient_print, Color
 
-subprocess.run("cls", shell=True)
-
-gradient_print(
-    r"""
-            ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-              ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
-             ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-
-                                                            V1.0
-""", 
-    start_color=Color.yellow, 
-    end_color=Color.magenta
-)
-
-gradient_print(
-    "\n \n \n[1] : Website Information\n[2] : IP Address Information\n[3] : MAC Address Information\n[4] : My IP\n[5] : Activate Windows\n[6] : Other Options", 
-    start_color=Color.yellow, 
-    end_color=Color.magenta
-)
-
 while True:
-    choix = input("Select an option, or Q to exit:").strip().lower()
+    subprocess.run("cls", shell=True)
+
+    gradient_print(
+        r"""
+                ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
+                ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
+                  ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
+                 ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
+                ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
+                ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
+
+                                                                V1.0
+    """, 
+        start_color=Color.yellow, 
+        end_color=Color.magenta
+    )
+
+    gradient_print(
+        "\n \n \n[1] : Website Information\n[2] : IP Address Information\n[3] : MAC Address Information\n[4] : My IP\n[5] : Info phone number\n[6] : Other Options", 
+        start_color=Color.yellow, 
+        end_color=Color.magenta
+    )
+
+    choix = input("Select an option, or Q to exit: ").strip().lower()
+    if not choix:
+        response = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
+        if response.lower() == "y":
+            exit()
+        else:
+            continue
 
     if choix == "1":
         subprocess.run(["python", "files/info_site.py"])
@@ -40,12 +47,14 @@ while True:
         subprocess.run(["python", "files/my_ip.py"])
         break
     elif choix == "5":
-        subprocess.run(["python", "files/win_acct.py"])
+        subprocess.run(["python", "files/info_num.py"])
         break
     elif choix == "6":
         subprocess.run(["python", "files/others.py"])
         break
     elif choix == "q":
-        break
+        exit()
     else:
-        print("Invalid choice. Select an option or Q to exit.")
+        print("Invalid choice.")
+        time.sleep(1)
+        continue

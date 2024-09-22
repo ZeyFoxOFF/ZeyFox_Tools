@@ -1,5 +1,4 @@
 import requests
-import keyboard
 import subprocess
 import time
 from rgbprint import gradient_print, Color
@@ -20,7 +19,7 @@ while True:
         start_color=Color.yellow, 
         end_color=Color.magenta
     )
-    adresse_ip = input("Enter an ip address (ex.. 80.100.200.60) or exit with Enter: ").strip()
+    adresse_ip = input("Enter an ip address (ex. 80.100.200.60) or exit with Enter: ").strip()
 
     if not adresse_ip:
         reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
@@ -59,33 +58,31 @@ while True:
         time.sleep(1)
         continue
 
-    print(f"IP Address: {query}")
+    print(f"IP Address : \033[95m{query}\033[0m")
     # print(f"Request Status: \033[32m{status}\033[0m")
     if country != "N/A":
-        print(f"Country: {country}")
+        print(f"Country : \033[95m{country}\033[0m")
     if country_code != "N/A":
-        print(f"Country Code: {country_code}")
+        print(f"Country Code : \033[95m{country_code}\033[0m")
     if region != "N/A":
-        print(f"Region: {region}")
+        print(f"Region : \033[95m{region}\033[0m")
     if city != "N/A":
-        print(f"City: {city}")
+        print(f"City : \033[95m{city}\033[0m")
     if postal != "N/A":
-        print(f"Postal Code: {postal}")
+        print(f"Postal Code : \033[95m{postal}\033[0m")
     if loc != "N/A":
-        print(f"Location: {loc}")
-        print(f"GPS Coordinates: \033[95m{google_maps_link}\033[0m")
+        print(f"Location : \033[95m{loc}\033[0m")
+        print(f"GPS Coordinates : \033[95m{google_maps_link}\033[0m")
     if timezone != "N/A":
-        print(f"Timezone: {timezone}")
+        print(f"Timezone : \033[95m{timezone}\033[0m")
     if isp != "N/A":
-        print(f"Internet Service Provider: {isp}")
+        print(f"Internet Service Provider : \033[95m{isp}\033[0m")
     if organization != "N/A" and organization != "":
-        print(f"Organization: {organization}")
+        print(f"Organization : \033[95m{organization}\033[0m")
     if as_number != "N/A":
-        print(f"AS Number: {as_number}")
+        print(f"AS Number : \033[95m{as_number}\033[0m")
     if as_name != "N/A":
-        print(f"AS Name: {as_name}")
+        print(f"AS Name : \033[95m{as_name}\033[0m")
     if reverse_dns != "N/A" and reverse_dns != "":
-        print(f"Hostname: {reverse_dns}")
+        print(f"Hostname : \033[95m{reverse_dns}\033[0m")
     input("Press a key to continue...")
-    if keyboard.is_pressed("enter"):
-        break
