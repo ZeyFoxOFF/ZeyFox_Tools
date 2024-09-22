@@ -2,10 +2,10 @@ import os
 import subprocess
 
 while True:
-    kms_key = input("Entrez une clé KMS ou quitter avec Entrer : ").strip()
+    kms_key = input("Enter a KMS key or exit with Enter: ").strip()
 
     if not kms_key:
-        reponse = input("Rien n'a été saisi. Voulez-vous quitter le programme ? (Y/N) : ")
+        reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
         if reponse.lower() == "y":
             subprocess.run(["python", "main.py"])
             break

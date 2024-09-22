@@ -23,7 +23,7 @@ while True:
     adresse_mac = input("Entrez une adresse mac (ex. 00:00:00:FF:FF:FF) ou quitter avec Entrer : ").strip()
 
     if not adresse_mac:
-        reponse = input("Rien n'a été saisi. Voulez-vous quitter le programme ? (Y/N) : ")
+        reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
         if reponse.lower() == "y":
             subprocess.run(["python", "main.py"])
             break
@@ -42,24 +42,22 @@ while True:
 
 
     if success:
-        print("\033[32mAdresse MAC valide.\033[0m")
+        print("\033[32mValid MAC Address.\033[0m")
     else:
-        print("\033[91mAdresse MAC inconnue.\033[0m")
+        print("\033[91mUnknown MAC Address.\033[0m")
         time.sleep(1)
         continue
 
-
-
-    print(f"Adresse MAC : {adresse_mac}")
+    print(f"MAC Address: {adresse_mac}")
     if country:
-        print(f"Pays : {country}")
+        print(f"Country: {country}")
     if adresse:
-        print(f"Adresse : {adresse}")
+        print(f"Address: {adresse}")
     if company:
-        print(f"Company : {company}")
+        print(f"Company: {company}")
     if aleatoire:
-        print(f"\033[38;5;214mAdresse MAC genérer\033[0m")
-    input("Appuyer sur une touche pour continuer...")
+        print(f"\033[38;5;214mGenerated MAC Address\033[0m")
+    input("Press a key to continue...")
 
     if keyboard.is_pressed("enter"):
         break

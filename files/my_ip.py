@@ -15,7 +15,7 @@ while True:
             return data['ip']
         except Exception as e:
             return str(e)
-    print(f"Votre adresse IPV4 publique est : \033[32m{get_public_ipv4()}\033[0m")
+    print(f"Your public IPV4 address is: \033[32m{get_public_ipv4()}\033[0m")
 
     def get_public_ipv6():
         try:
@@ -25,14 +25,14 @@ while True:
         except Exception as e:
             return str(e)
     adresse_ip = get_public_ipv6()
-    print(f"Votre adresse IPV6 publique est : \033[32m{get_public_ipv6()}\033[0m")
+    print(f"Your public IPv6 address is: \033[32m{get_public_ipv6()}\033[0m")
 
     def get_local_ip():
         hostname = socket.gethostname()
         local_ip = socket.gethostbyname(hostname)
         return local_ip
     local_ip = get_local_ip()
-    print(f"Votre IP locale est : {local_ip}")
+    print(f"Your local IP is: {local_ip}")
 
 
 
@@ -55,34 +55,35 @@ while True:
     as_name = geo_info.get("asname", "N/A")
     reverse_dns = geo_info.get("reverse", "N/A")
 
-    # print(f"Adresse IP : {query}")
-    # print(f"Statut de la requête : \033[32m{status}\033[0m")
+    # print(f"IP Address: {query}")
+    # print(f"Request Status: \033[32m{status}\033[0m")
     if country != "N/A":
-        print(f"Pays : {country}")
+        print(f"Country: {country}")
     if country_code != "N/A":
-        print(f"Code du pays : {country_code}")
+        print(f"Country Code: {country_code}")
     if region != "N/A":
-        print(f"Région : {region}")
+        print(f"Region: {region}")
     if city != "N/A":
-        print(f"Ville : {city}")
+        print(f"City: {city}")
     if postal != "N/A":
-        print(f"Code postal : {postal}")
+        print(f"Postal Code: {postal}")
     if loc != "N/A":
-        print(f"Localisation : {loc}")
-        print(f"Coordonnée gps : \033[95m{google_maps_link}\033[0m")
+        print(f"Location: {loc}")
+        print(f"GPS Coordinates: \033[95m{google_maps_link}\033[0m")
     if timezone != "N/A":
-        print(f"Fuseau horaire : {timezone}")
+        print(f"Timezone: {timezone}")
     if isp != "N/A":
-        print(f"Fournisseur d'accès a internet : {isp}")
+        print(f"Internet Service Provider: {isp}")
     if organization != "N/A" and organization != "":
-        print(f"Organisation : {organization}")
+        print(f"Organization: {organization}")
     if as_number != "N/A":
-        print(f"Numéro AS : {as_number}")
+        print(f"AS Number: {as_number}")
     if as_name != "N/A":
-        print(f"Nom de l'AS : {as_name}")
+        print(f"AS Name: {as_name}")
     if reverse_dns != "N/A":
-        print(f"Nom d'hôte : {reverse_dns}")
-    input("Appuyer sur une touche pour continuer...")
+        print(f"Hostname: {reverse_dns}")
+    input("Press a key to continue...")
+
     subprocess.run(["python", "main.py"])
     break
 

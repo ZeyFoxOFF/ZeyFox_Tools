@@ -20,10 +20,10 @@ while True:
         start_color=Color.yellow, 
         end_color=Color.magenta
     )
-    adresse_ip = input("Entrez une adresse ip (ex. 80.100.200.60) ou quitter avec Entrer : ").strip()
+    adresse_ip = input("Enter an ip address (ex.. 80.100.200.60) or exit with Enter: ").strip()
 
     if not adresse_ip:
-        reponse = input("Rien n'a été saisi. Voulez-vous quitter le programme ? (Y/N) : ")
+        reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
         if reponse.lower() == "y":
             subprocess.run(["python", "main.py"])
             break
@@ -53,41 +53,39 @@ while True:
 
 
     if status == "success":
-        print("\033[32mAdresse IP valide.\033[0m")
+        print("\033[32mValid IP Address.\033[0m")
     elif status == "fail":
-        print("\033[91mAdresse IP inconnu.\033[0m")
+        print("\033[91mUnknown IP Address.\033[0m")
         time.sleep(1)
         continue
 
-
-    print(f"Adresse IP : {query}")
-    # print(f"Statut de la requête : \033[32m{status}\033[0m")
+    print(f"IP Address: {query}")
+    # print(f"Request Status: \033[32m{status}\033[0m")
     if country != "N/A":
-        print(f"Pays : {country}")
+        print(f"Country: {country}")
     if country_code != "N/A":
-        print(f"Code du pays : {country_code}")
+        print(f"Country Code: {country_code}")
     if region != "N/A":
-        print(f"Région : {region}")
+        print(f"Region: {region}")
     if city != "N/A":
-        print(f"Ville : {city}")
+        print(f"City: {city}")
     if postal != "N/A":
-        print(f"Code postal : {postal}")
+        print(f"Postal Code: {postal}")
     if loc != "N/A":
-        print(f"Localisation : {loc}")
-        print(f"Coordonnée gps : \033[95m{google_maps_link}\033[0m")
+        print(f"Location: {loc}")
+        print(f"GPS Coordinates: \033[95m{google_maps_link}\033[0m")
     if timezone != "N/A":
-        print(f"Fuseau horaire : {timezone}")
+        print(f"Timezone: {timezone}")
     if isp != "N/A":
-        print(f"Fournisseur d'accès a internet : {isp}")
+        print(f"Internet Service Provider: {isp}")
     if organization != "N/A" and organization != "":
-        print(f"Organisation : {organization}")
+        print(f"Organization: {organization}")
     if as_number != "N/A":
-        print(f"Numéro AS : {as_number}")
+        print(f"AS Number: {as_number}")
     if as_name != "N/A":
-        print(f"Nom de l'AS : {as_name}")
+        print(f"AS Name: {as_name}")
     if reverse_dns != "N/A" and reverse_dns != "":
-        print(f"Nom d'hôte : {reverse_dns}")
-
-
+        print(f"Hostname: {reverse_dns}")
+    input("Press a key to continue...")
     if keyboard.is_pressed("enter"):
         break
