@@ -1,7 +1,6 @@
 import subprocess
 from rgbprint import gradient_print, Color
 
-# Effacer l'écran
 subprocess.run("cls", shell=True)
 
 gradient_print(

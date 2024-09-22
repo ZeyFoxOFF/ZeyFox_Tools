@@ -60,7 +60,6 @@ while True:
         continue
 
 
-# Afficher les données uniquement si elles ne sont pas "N/A"
     print(f"Adresse IP : {query}")
     # print(f"Statut de la requête : \033[32m{status}\033[0m")
     if country != "N/A":

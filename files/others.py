@@ -2,7 +2,6 @@ import os
 import subprocess
 import socket
 from portscan import PortScan
-import time
 from rgbprint import gradient_print, Color
 while True:
     subprocess.run("cls", shell=True)
