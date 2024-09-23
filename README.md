@@ -5,13 +5,13 @@ First clone the ZeyFox Tools
 ```
 git clone https://github.com/ZeyFoxOFF/ZeyFox_Tools.git
 ```
-# How to run the cli (automatic)
+# How to run the tool (automatic)
 Go to ZeyFox Tools folder `ZeyFox_Tools`
 
 Install the modules, start the `setup.bat`
 
-Start the `run.bat`
-# How to run the cli (manualy)
+Start the tool, start the `run.bat`
+# How to run the tool (manualy)
 Go to ZeyFox Tools folder 
 ```
 cd ZeyFox_Tools
@@ -20,7 +20,7 @@ Install the modules
 ```
 pip install -r requirements.txt
 ```
-and run the cli
+Run the tool
 ```
 python main.py
 ```
