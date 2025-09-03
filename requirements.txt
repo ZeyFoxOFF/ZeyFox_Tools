@@ -1,7 +1,7 @@
-requests>=2.31.0
-whois>=0.9.27
+requests>=2.32.5
+whois>=1.20240129.2
 keyboard>=0.13.5
 rgbprint>=4.0.2
-python-whois>=0.9.4
+python-whois>=0.9.5
 portscan >=1.1
-phonenumbers>=8.13.45
+phonenumbers>=9.0.13

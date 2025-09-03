@@ -14,6 +14,7 @@ while True:
         except Exception as e:
             return str(e)
     print(f"Your public IPV4 address is: \033[32m{get_public_ipv4()}\033[0m")
+    adresse_ipv4 = get_public_ipv4()
 
     def get_public_ipv6():
         try:
@@ -22,8 +23,11 @@ while True:
             return data['ip']
         except Exception as e:
             return str(e)
-    adresse_ip = get_public_ipv6()
-    print(f"Your public IPv6 address is: \033[32m{get_public_ipv6()}\033[0m")
+    adresse_ipv6 = get_public_ipv6()
+    if adresse_ipv6 != adresse_ipv4:
+        print(f"Your public IPV6 address is: \033[32m{adresse_ipv6}\033[0m")
+    else:
+        print(f"Your public IPV6 address is: \033[32mNot found\033[0m")
 
     def get_local_ip():
         hostname = socket.gethostname()

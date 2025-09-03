@@ -33,13 +33,13 @@ while True:
         start_color=Color.magenta, 
         end_color=Color.yellow
     )
+    # gradient_print(
+    #     "[3] : Activate Windows", 
+    #     start_color=Color.magenta, 
+    #     end_color=Color.yellow
+    # )
     gradient_print(
-        "[3] : Activate Windows", 
-        start_color=Color.magenta, 
-        end_color=Color.yellow
-    )
-    gradient_print(
-        "[4] : Discord User Info",
+        "[3] : Discord User Info",
         start_color=Color.magenta, 
         end_color=Color.yellow
     )
@@ -141,45 +141,45 @@ while True:
                 break
             else:
                 print("Invalid choice. Select an option or Q to exit.")
-    elif choix == 3:
-        while True:
-            kms_key = input("Enter a KMS key or exit with Enter: ").strip()
+    # elif choix == 3:
+    #     while True:
+    #         kms_key = input("Enter a KMS key or exit with Enter: ").strip()
 
-            if not kms_key:
-                reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
-                if reponse.lower() == "y":
-                    subprocess.run(["python", "main.py"])
-                    break
-                else:
-                    continue
+    #         if not kms_key:
+    #             reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
+    #             if reponse.lower() == "y":
+    #                 subprocess.run(["python", "main.py"])
+    #                 break
+    #             else:
+    #                 continue
 
-        def activator():
-            os.system(f'slmgr /ipk {kms_key}')
+    #     def activator():
+    #         os.system(f'slmgr /ipk {kms_key}')
 
-            # Configurer l'adresse du serveur KMS
-            os.system('slmgr /skms kms.digiboy.ir')
+    #         # Configurer l'adresse du serveur KMS
+    #         os.system('slmgr /skms kms.digiboy.ir')
 
-            # Activer Windows
-            os.system('slmgr /ato')
+    #         # Activer Windows
+    #         os.system('slmgr /ato')
 
-            # By Arizaki
+    #         # By Arizaki
 
-            # Windows 10:
-            # Windows 10 Pro : `W269N-WFGWX-YVC9B-4J6C9-T83GX`
-            # Windows 10 Home : `TX9XD-98N7V-6WMQ6-BX7FG-H8Q99`
-            # Windows 10 Pro N : `MH37W-N47XK-V7XM9-C7227-GCQG9`
-            # Windows 10 Home N : `3KHY7-WNT83-DGQKR-F7HPR-844BM`
-            # Windows 10 Education : `NW6C2-QMPVW-D7KKK-3GKT6-VCFB2`
-            # Windows 10 Enterprise : `NPPR9-FWDCX-D2C8J-H872K-2YT43`
+    #         # Windows 10:
+    #         # Windows 10 Pro : `W269N-WFGWX-YVC9B-4J6C9-T83GX`
+    #         # Windows 10 Home : `TX9XD-98N7V-6WMQ6-BX7FG-H8Q99`
+    #         # Windows 10 Pro N : `MH37W-N47XK-V7XM9-C7227-GCQG9`
+    #         # Windows 10 Home N : `3KHY7-WNT83-DGQKR-F7HPR-844BM`
+    #         # Windows 10 Education : `NW6C2-QMPVW-D7KKK-3GKT6-VCFB2`
+    #         # Windows 10 Enterprise : `NPPR9-FWDCX-D2C8J-H872K-2YT43`
 
-            # Windows 11:
-            # Windows 11 Pro : `VK7JG-NPHTM-C97JM-9MPGT-3V66T`
-            # Windows 11 Home : `T96YJ-W9QGK-WBK44-2WQBR-BXJDY`
-            # Windows 11 Pro N : `9FNHH-K3HBT-3W4TD-6383H-6XYWF`
-            # Windows 11 Enterprise : `FPHH3-HNDR3-M8RMG-7DZFW-VV2TR`
-            activator()
+    #         # Windows 11:
+    #         # Windows 11 Pro : `VK7JG-NPHTM-C97JM-9MPGT-3V66T`
+    #         # Windows 11 Home : `T96YJ-W9QGK-WBK44-2WQBR-BXJDY`
+    #         # Windows 11 Pro N : `9FNHH-K3HBT-3W4TD-6383H-6XYWF`
+    #         # Windows 11 Enterprise : `FPHH3-HNDR3-M8RMG-7DZFW-VV2TR`
+    #         activator()
 
-    elif choix == "4":
+    elif choix == "3":
         while True:
             subprocess.run("cls", shell=True)
 
@@ -243,6 +243,7 @@ while True:
 
             response = requests.get(f'https://discord.com/api/v10/users/{discord_user_id}', headers=headers)
             user_info = response.json()
+            print(user_info)
             if response.status_code == 200:
                 # print(user_info)
                 print(f"Username: \033[95m{user_info['username']}\033[0m")
@@ -253,7 +254,9 @@ while True:
                 print(f"Avatart decoration: \033[95mhttps://cdn.discordapp.com/avatar-decoration-presets/{user_info['avatar_decoration_data']['asset']}\033[0m")
 
                 num_badges = get_badges(user_info['public_flags'])
-                if len(num_badges) == 1:
+                if len(num_badges) == 0:
+                    print(f"Badges : \033[95mNone\033[0m")
+                elif len(num_badges) == 1:
                     print(f"Badge : \033[95m{', '.join(num_badges)}\033[0m")
                 else:
                     print(f"Badges : \033[95m{', '.join(num_badges)}\033[0m")
