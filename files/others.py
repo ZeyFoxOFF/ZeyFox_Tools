@@ -34,7 +34,7 @@ while True:
         start_color=Color.magenta, 
         end_color=Color.yellow
     )
-    choix = input("Select an option, or Q to exit:").strip().lower()
+    choix = input("Select an option, or Q to exit: ").strip().lower()
     if not choix:
         reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
         if reponse.lower() == "y":

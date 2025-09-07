@@ -39,7 +39,7 @@ while True:
                 return all(0 <= int(p) <= 255 for p in parts)
 
             
-            color_rbg = input("Enter an rgb color (ex. 255 0 128) or exit with Enter: ")
+            color_rbg = input("Enter an rgb color (ex. 255 0 128) or enter \"default\" to reset the color or exit with Enter: ")
             if not color_rbg:
                 reponse = input("Nothing was entered. Do you want to leave the program? (Y/N): ")
                 if reponse.lower() == "y":
@@ -47,6 +47,16 @@ while True:
                     break
                 else:
                     continue
+            elif color_rbg == "default":
+                location = wrg.HKEY_CURRENT_USER
+                soft = wrg.OpenKeyEx(location, r"Control Panel\\test", 0, wrg.KEY_SET_VALUE)
+                wrg.SetValueEx(soft, "Hilight", 0, wrg.REG_SZ, "0 120 212")
+                wrg.SetValueEx(soft, "HotTrackingColor", 0, wrg.REG_SZ, "0 102 204")
+                wrg.CloseKey(soft)
+                print(f"Colors set to default")
+                input("Press a key to continue...")
+                subprocess.run(["python", "files/windows_settings.py"])
+                break
             elif not check_input(color_rbg):
                 print("Invalid format. Please enter like: 000 000 000 (numbers 0-255 only).")
                 time.sleep(1)
