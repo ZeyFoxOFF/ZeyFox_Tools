@@ -53,7 +53,7 @@ while True:
                 wrg.SetValueEx(soft, "Hilight", 0, wrg.REG_SZ, "0 120 212")
                 wrg.SetValueEx(soft, "HotTrackingColor", 0, wrg.REG_SZ, "0 102 204")
                 wrg.CloseKey(soft)
-                print(f"Colors set to default")
+                print(f"Colors set to default, to see the default colors, restart your computer.")
                 input("Press a key to continue...")
                 subprocess.run(["python", "files/windows_settings.py"])
                 break
@@ -68,7 +68,7 @@ while True:
                 wrg.SetValueEx(soft, "HotTrackingColor", 0, wrg.REG_SZ, color_rbg)
                 wrg.CloseKey(soft)
                 print(f"Colors set to {color_rbg}")
-                input("Press a key to continue...")
+                input("Colors set to default, to see the colors you put, restart your computer.")
                 subprocess.run(["python", "files/windows_settings.py"])
                 break
 
