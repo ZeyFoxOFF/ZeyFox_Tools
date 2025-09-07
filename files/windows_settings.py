@@ -49,7 +49,7 @@ while True:
                     continue
             elif color_rbg == "default":
                 location = wrg.HKEY_CURRENT_USER
-                soft = wrg.OpenKeyEx(location, r"Control Panel\\test", 0, wrg.KEY_SET_VALUE)
+                soft = wrg.OpenKeyEx(location, r"Control Panel\\Color", 0, wrg.KEY_SET_VALUE)
                 wrg.SetValueEx(soft, "Hilight", 0, wrg.REG_SZ, "0 120 212")
                 wrg.SetValueEx(soft, "HotTrackingColor", 0, wrg.REG_SZ, "0 102 204")
                 wrg.CloseKey(soft)
