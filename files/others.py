@@ -6,25 +6,11 @@ import time
 from datetime import datetime, timezone
 from portscan import PortScan
 from rgbprint import gradient_print, Color
+from utils.utils import banner
 while True:
-    subprocess.run("cls", shell=True)
-
+    banner()
     gradient_print(
-        r"""
-            ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-              ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
-             ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-
-                                                            V1.0
-    """, 
-        start_color=Color.yellow, 
-        end_color=Color.magenta
-    )
-    gradient_print(
-        "[1] : Delete temporary files", 
+        "\n \n \n[1] : Delete temporary files", 
         start_color=Color.magenta, 
         end_color=Color.yellow
     )
@@ -40,6 +26,11 @@ while True:
     # )
     gradient_print(
         "[3] : Discord User Info",
+        start_color=Color.magenta, 
+        end_color=Color.yellow
+    )
+    gradient_print(
+        "[4] : Windows Settings",
         start_color=Color.magenta, 
         end_color=Color.yellow
     )
@@ -59,22 +50,8 @@ while True:
         # C:\Users\Username\AppData\Local\Temp
     elif choix == "2":
         while True:
-            subprocess.run("cls", shell=True)
+            banner()
 
-            gradient_print(
-                r"""
-            ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-              ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
-             ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-
-                                                            V1.0
-            """, 
-                start_color=Color.yellow, 
-                end_color=Color.magenta
-            )
             gradient_print(
                 "[1] : Your local IP", 
                 start_color=Color.magenta, 
@@ -110,22 +87,8 @@ while True:
                 input("Press a key to continue...")
             elif choix == "2":       
                 while True:
-                    subprocess.run("cls", shell=True)
+                    banner()
 
-                    gradient_print(
-                        r"""
-            ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-              ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
-             ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-
-                                                            V1.0
-                    """, 
-                        start_color=Color.yellow, 
-                        end_color=Color.magenta
-                    )
                     choix_ip = input("Enter an ip address (ex. 80.100.200.60) or exit with Enter: ").strip()
                     if choix_ip:
                         port_range = '1-65535'
@@ -181,22 +144,7 @@ while True:
 
     elif choix == "3":
         while True:
-            subprocess.run("cls", shell=True)
-
-            gradient_print(
-                r"""
-            ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-              ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
-             ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-
-                                                            V1.0
-            """, 
-                start_color=Color.yellow, 
-                end_color=Color.magenta
-            )
+            banner()
 
             discord_user_id = input("Enter an user id (ex. 693135745925382166) or exit with Q: ").strip()
 
@@ -267,12 +215,12 @@ while True:
             input("Press a key to continue...")
 
 
+    elif choix == "4":
+            subprocess.run(["python", "files/windows_settings.py"])
+            break
+
     elif choix == "q":
         subprocess.run(["python", "main.py"])
         break
     else:
         print("Invalid choice. Select an option or Q to exit.")
-
-
-
-

@@ -1,26 +1,10 @@
 import phonenumbers
 from phonenumbers import geocoder, carrier, timezone
-from rgbprint import gradient_print, Color
 import subprocess
 import time
-
+from utils.utils import banner
 while True:
-    subprocess.run("cls", shell=True)
-
-    gradient_print(
-        r"""
-            ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-              ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
-             ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-
-                                                            V1.0
-    """,
-        start_color=Color.yellow,
-        end_color=Color.magenta
-    )
+    banner()
 
     phone_number = input("Enter a phone number (ex. +33623456789) or exit with Enter: ").replace(" ", "")
 

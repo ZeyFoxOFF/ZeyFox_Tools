@@ -1,24 +1,9 @@
 import requests
 import subprocess
 import time
-from rgbprint import gradient_print, Color
+from utils.utils import banner
 while True:
-    subprocess.run("cls", shell=True)
-
-    gradient_print(
-        r"""
-            ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-              ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
-             ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-
-                                                            V1.0
-    """, 
-        start_color=Color.yellow, 
-        end_color=Color.magenta
-    )
+    banner()
     adresse_ip = input("Enter an ip address (ex. 80.100.200.60) or exit with Enter: ").strip()
 
     if not adresse_ip:

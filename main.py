@@ -1,24 +1,9 @@
 import subprocess
 import time
 from rgbprint import gradient_print, Color
-
+from files.utils.utils import banner
 while True:
-    subprocess.run("cls", shell=True)
-
-    gradient_print(
-        r"""
-            ███████╗███████╗██╗   ██╗███████╗ ██████╗ ██╗  ██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ╚══███╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔═══██╗╚██╗██╔╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-              ███╔╝ █████╗   ╚████╔╝ █████╗  ██║   ██║ ╚███╔╝        ██║   ██║   ██║██║   ██║██║     ███████╗
-             ███╔╝  ██╔══╝    ╚██╔╝  ██╔══╝  ██║   ██║ ██╔██╗        ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ███████╗███████╗   ██║   ██║     ╚██████╔╝██╔╝ ██╗       ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚══════╝╚══════╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-
-                                                            V1.0
-    """, 
-        start_color=Color.yellow, 
-        end_color=Color.magenta
-    )
+    banner()
 
     gradient_print(
         "\n \n \n[1] : Website Information\n[2] : IP Address Information\n[3] : MAC Address Information\n[4] : My IP\n[5] : Info phone number\n[6] : Other Options", 
