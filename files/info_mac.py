@@ -22,7 +22,7 @@ while True:
     adresse = mac_info.get("adresse")
     country = mac_info.get("country")
     company = mac_info.get("company")
-    aleatoire = mac_info.get("isRand")
+    isfound = mac_info.get("found")
 
 
     if success:
@@ -39,7 +39,7 @@ while True:
         print(f"Address: \033[95m{adresse}\033[0m")
     if company:
         print(f"Company: \033[95m{company}\033[0m")
-    if aleatoire:
-        print(f"\033[38;5;214mGenerated MAC Address\033[0m")
+    if isfound == False:
+        print(f"\033[38;5;214mMAC Address unknown\033[0m")
     input("Press a key to continue...")
 
